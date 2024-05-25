@@ -1,13 +1,16 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>details</ion-title>
+    <ion-title>{{ pokemon?.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content *ngIf="pokemon">
+  <ion-card>
+    <img [src]="pokemon.sprites?.front_default" alt="{{ pokemon.name }}">
+    <ion-card-content>
+      <p>Height: {{ pokemon.height }}</p>
+      <p>Weight: {{ pokemon.weight }}</p>
+      <p>Base Experience: {{ pokemon.base_experience }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
