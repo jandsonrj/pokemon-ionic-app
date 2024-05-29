@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -9,11 +9,19 @@ import { PokemonService } from '../services/pokemon.service';
 })
 export class DetailsPage implements OnInit {
   pokemon: any;
+  pokemons: any[] = [];
+
+  slideOpts = {
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 20,
+  };
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private pokemonService: PokemonService
-  ) { }
+  ) {}
 
   ngOnInit() {
     const name = this.activatedRoute.snapshot.paramMap.get('name') ?? '';
@@ -24,5 +32,9 @@ export class DetailsPage implements OnInit {
     } else {
       console.error('No Pokémon name provided');
     }
+  }
+
+  closeDetails() {
+    this.router.navigate(['/']);
   }
 }

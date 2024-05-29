@@ -1,16 +1,24 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>{{ pokemon?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeDetails()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="pokemon">
+<ion-content>
   <ion-card>
-    <img [src]="pokemon.sprites?.front_default" alt="{{ pokemon.name }}">
+    <img [src]="pokemon?.sprites?.front_default" [alt]="pokemon?.name">
     <ion-card-content>
-      <p>Height: {{ pokemon.height }}</p>
-      <p>Weight: {{ pokemon.weight }}</p>
-      <p>Base Experience: {{ pokemon.base_experience }}</p>
+      <p>Height: {{ pokemon?.height }}</p>
+      <p>Weight: {{ pokemon?.weight }}</p>
+      <p>Base Experience: {{ pokemon?.base_experience }}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>

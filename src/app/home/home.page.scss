@@ -8,6 +8,15 @@
   transform: translateY(-50%);
 }
 
+ion-card {
+  text-align: center;
+}
+
+ion-card img {
+  width: 100px;
+  height: 100px;
+}
+
 #container strong {
   font-size: 20px;
   line-height: 26px;

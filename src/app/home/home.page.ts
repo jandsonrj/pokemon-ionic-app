@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -7,18 +8,24 @@ import { PokemonService } from '../services/pokemon.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  pokemons: any[] = [];
-  offset = 0;
+  pokemons: { name: string; image: string }[] = [];
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private router: Router, private pokemonService: PokemonService) {}
 
   ngOnInit() {
     this.loadPokemons();
   }
 
-  loadPokemons() {
-    this.pokemonService.getPokemonList(20, this.offset).subscribe(response => {
-      this.pokemons = response.results;
+  async loadPokemons() {
+    this.pokemonService.getPokemonList(100, 0).subscribe((response: any) => {
+      this.pokemons = response.results.map((pokemon: any) => ({
+        name: pokemon.name,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/').slice(-2, -1)}.png`
+      }));
     });
+  }
+
+  openDetailsPage(pokemonName: string) {
+    this.router.navigate(['/details', pokemonName]);
   }
 }

@@ -1,0 +1,19 @@
+ion-content {
+  --background: transparent;
+}
+
+.card-content {
+  background-color: #fff;
+  padding: 16px;
+}
+
+ion-card {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
