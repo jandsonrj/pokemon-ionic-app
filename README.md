@@ -1,6 +1,11 @@
 # Pokémon Ionic App
 
-Este projeto é uma aplicação básica que utiliza a PokeAPI para exibir uma lista de Pokémon e seus detalhes.
+![image](https://github.com/jandsonrj/pokemon-ionic-app/assets/101944851/6294845b-b528-4cff-899a-12ba60c2c38e)
+
+
+Este projeto é uma aplicação básica que utiliza a PokeAPI para exibir uma lista de Pokémon e seus detalhes. 
+
+A aplicação é responsiva, funcionando tanto em desktop quanto em dispositivos móveis.
 
 ## Instalação
 
@@ -28,6 +33,10 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 A aplicação será automaticamente aberta no seu navegador na porta: [http://localhost:8100/](http://localhost:8100/)
 
+## Deploy de Produção
+
+A aplicação está implantada na Vercel. Você pode acessá-la através do seguinte link: [Pokémon Ionic App](https://pokemon-ionic-app.vercel.app/home)
+
 ## Pré-requisitos
 
 Certifique-se de ter o Node.js instalado na sua máquina. Você pode baixá-lo e instalá-lo a partir do [site oficial do Node.js](https://nodejs.org/).
@@ -37,6 +46,7 @@ Certifique-se de ter o Node.js instalado na sua máquina. Você pode baixá-lo e
 - [Ionic Framework](https://ionicframework.com/)
 - [Angular](https://angular.io/)
 - [PokeAPI](https://pokeapi.co/)
+- [Vercel](https://vercel.com/)
 
 ## Contribuindo
 
