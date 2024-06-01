@@ -3,7 +3,9 @@
 ![image](https://github.com/jandsonrj/pokemon-ionic-app/assets/101944851/6294845b-b528-4cff-899a-12ba60c2c38e)
 
 
-Este projeto é uma aplicação básica que utiliza a PokeAPI para exibir uma lista de Pokémon e seus detalhes.
+Este projeto é uma aplicação básica que utiliza a PokeAPI para exibir uma lista de Pokémon e seus detalhes. 
+
+A aplicação é responsiva, funcionando tanto em desktop quanto em dispositivos móveis.
 
 ## Instalação
 
