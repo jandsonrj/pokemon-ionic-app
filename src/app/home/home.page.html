@@ -15,9 +15,10 @@
             <ion-card-title>{{ pokemon.name }}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-icon name="star" [color]="pokemon.isFavorite ? 'warning' : 'medium'" (click)="toggleFavorite(pokemon)"></ion-icon>
+            <ion-icon name="star" [color]="pokemon.isFavorite ? 'warning' : 'medium'"
+              (click)="toggleFavorite(pokemon)"></ion-icon>
           </ion-card-content>
-        </ion-card>        
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -26,7 +27,7 @@
 <ion-footer>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="prevPage()">
+      <ion-button (click)="prevPage()" [disabled]="currentPage === 1">
         <ion-icon name="chevron-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -35,6 +36,7 @@
         <ion-icon name="chevron-forward"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">Developer by <a href="https://github.com/jandsonrj" target="_blank" style="color: red; text-decoration: none;">Jandev</a> &REG;</ion-title>
+    <ion-title class="ion-text-center">Developer by <a href="https://github.com/jandsonrj" target="_blank"
+        style="color: red; text-decoration: none;">Jandev</a> &REG;</ion-title>
   </ion-toolbar>
 </ion-footer>

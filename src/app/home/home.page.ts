@@ -37,12 +37,28 @@ export class HomePage implements OnInit {
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/').slice(-2, -1)}.png`,
         isFavorite: false
       }));
+      this.loadFavorites();
       this.filteredPokemons = [...this.pokemons];
     });
   }
 
+  loadFavorites() {
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    this.pokemons.forEach(pokemon => {
+      if (favorites.includes(pokemon.name)) {
+        pokemon.isFavorite = true;
+      }
+    });
+  }
+
+  saveFavorites() {
+    const favorites = this.pokemons.filter(pokemon => pokemon.isFavorite).map(pokemon => pokemon.name);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }
+
   toggleFavorite(pokemon: any) {
     pokemon.isFavorite = !pokemon.isFavorite;
+    this.saveFavorites();
   }
 
   openDetailsPage(pokemonName: string) {
