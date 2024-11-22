@@ -6,3 +6,6 @@ describe('CapitalizePipe', () => {
     expect(pipe).toBeTruthy();
   });
 });
+
+
+// w w w
