@@ -19,3 +19,5 @@ import { PipesModule } from '../pipes/pipes.module';
   declarations: [HomePage]
 })
 export class HomePageModule { }
+
+// ¹¹¹²²²³³³
